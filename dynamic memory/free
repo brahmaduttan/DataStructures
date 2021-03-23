@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+int *ptr,s1,s2,i;
+printf("Enter the size");
+scanf("%d",&s1);
+ptr=(int*)malloc(s1*sizeof(int));
+printf("Allocated memories are\n");
+for(i=0;i<s1;i++)
+{
+printf("%u\n",ptr+i);
+}
+printf("Enter the size");
+scanf("%d",&s2);
+ptr=realloc(ptr,s2*sizeof(int));
+printf("Reallocated memories are\n");
+for(i=0;i<s2;i++)
+{
+printf("%u\n",ptr+i);
+}
+
+free(ptr);
+
+
+}
+
+    

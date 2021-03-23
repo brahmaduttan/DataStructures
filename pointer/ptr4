@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+int *ptr;
+int ar[5],i;
+ptr=ar+i;
+for(i=0;i<5;i++)
+{
+printf("Address of ar[%d] is %p\n" ,i,ar+i);
+
+}
+}
+
+
+    

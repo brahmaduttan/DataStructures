@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main()
+{
+    int dig=10;
+    int *ptr;
+    ptr=&dig;
+    printf("%d\n",dig);
+    printf("%d",*ptr);
+    return 0;
+}

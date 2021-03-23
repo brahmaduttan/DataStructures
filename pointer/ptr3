@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main()
+{
+    int dig=20;
+    int *ptr = &dig;
+    
+    printf("Address is %d\n",&ptr);
+    printf("data is %d",*ptr);
+    return 0;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+int *ptr,s1,i;
+printf("Enter the size");
+scanf("%d",&s1);
+ptr=(int*)calloc(s1,sizeof(int));
+printf("Allocated memories are\n");
+for(i=0;i<s1;i++)
+{
+printf("%u\n",ptr+i);
+}
+}
+
+    

@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+int ar[5],i;
+for(i=0;i<5;i++)
+{
+printf("Address of ar[i] is %d\n" ,&ar[i]);
+
+}
+}
+
+
+    

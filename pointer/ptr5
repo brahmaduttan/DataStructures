@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+int *ptr,i;
+int ar[5]={1,2,3,4,5};
+ptr=&ar[0];
+for(i=0;i<5;i++)
+{
+printf(" ar[%d]=%d\n" ,i,*(ar+i));
+
+}
+}
+
+
+    
