@@ -1,97 +1,54 @@
-
-#include <stdio.h>
-#include <stdlib.h>
-
-
-void merge(int arr[], int p, int q, int r)
+#include<stdio.h>
+void main() 
 {
-	int i, j, k;
-	int n1 = q - p + 1;
-	int n2 = r - q;
-
-	
-	int L[n1], R[n2];
-
-	for (i = 0; i < n1; i++)
-		L[i] = arr[p + i];
-	for (j = 0; j < n2; j++)
-		R[j] = arr[q + 1 + j];
-
-	i = 0; 
-	j = 0; 
-	k = p; 
-	while (i < n1 && j < n2)
+int n, m, i, j, k, c[40], a[20], b[20];
+printf ("Enter limit for A:");
+scanf ("%d", &n);
+printf ("\nEnter limit for B:");
+scanf ("%d", &m);
+printf ("Enter elements for A in sorted order:-\n");
+for (i = 0; i < n; i++)
+    {
+scanf ("%d", &a[i]);
+    }
+printf ("Enter elements for B in sorted order:-\n");
+for (j = 0; j < m; j++)
+    {
+scanf ("%d", &b[j]);
+    }
+i = j = k = 0;
+while (i < n && j < m)
+    {
+if (a[i] < b[j])
+   {
+   c[k++] = a[i++];
+   }
+else if (a[i] > b[j])
 	{
-		if (L[i] <= R[j]) 
-		  {
-			arr[k] = L[i];
-			i++;
-	      }
-		else 
-		{
-			arr[k] = R[j];
-			j++;
-		}
-		k++;
-	}
-
-	
-	while (i < n1)
+	 c[k++] = b[j++];
+	} 
+else
 	{
-		arr[k] = L[i];
-		i++;
-		k++;
-	}
-
-	
-	while (j < n2)
-	{
-		arr[k] = R[j];
-		j++;
-		k++;
-	}
-}
-
-
-void mergeSort(int arr[], int l, int r)
+    c[k++] = b[j++];
+	  i++;
+	  j++;
+    }}
+if (i < n)
 {
-	if (l < r) 
-	{
-
-		int m = l + (r - l) / 2;
-
-		
-		mergeSort(arr, l, m);
-		mergeSort(arr, m + 1, r);
-
-		merge(arr, l, m, r);
-	}
-}
-
-void printArray(int arr[], int n)
-{
-	int i;
-	for (i = 0; i < n; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
-}
-
-
-int main()
-{   
-    int n , i;
-	int arr[100];
-	
-	printf("Enter the size:");
-	scanf("%d",&n);
-	printf("Enter the elements:");
-	for (i=0;i<n;i++)
-	  {
-	      scanf("%d",&arr[i]);
-	  }
-	mergeSort(arr, 0, n - 1);
-
-	printf("\nSorted array is \n");
-    printArray(arr,n);
-    return 0;
+for (int t = 0; t < n; t++)
+{	
+c[k++] = a[i++];
+}}  
+if (j < m)
+    {
+    for (int t = 0; t < m; t++)
+      {
+	c[k++] = b[j++];
+      }}
+printf ("\n");
+for (k = 0; k < (m + n); k++)
+  {
+printf ("\t \n %d ", c[k]);
+  }
+printf("\n");
 }
